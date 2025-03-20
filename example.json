@@ -1,0 +1,45 @@
+{
+    "request_id": "20250320_3a2f210f-4291-416b-89e5-d6dee1f5a5ef",
+    "transcript": "transcript_here.",
+    "language_code": "en-IN",
+    "diarized_transcript": {
+        "entries": [
+            {
+                "transcript": "Hello, this is speaker zero.",
+                "start_time_seconds": 1.5,
+                "end_time_seconds": 4.2,
+                "speaker_id": "SPEAKER_00"
+            },
+            {
+                "transcript": "And this is speaker one responding.",
+                "start_time_seconds": 4.8,
+                "end_time_seconds": 7.3,
+                "speaker_id": "SPEAKER_01"
+            },
+            {
+                "transcript": "Could you elaborate on what you were saying earlier?",
+                "start_time_seconds": 8.1,
+                "end_time_seconds": 11.5,
+                "speaker_id": "SPEAKER_00"
+            },
+            {
+                "transcript": "Of course, I'd be happy to explain in more detail.",
+                "start_time_seconds": 12.0,
+                "end_time_seconds": 15.8,
+                "speaker_id": "SPEAKER_01"
+            },
+            {
+                "transcript": "The key point is that we need to focus on the integration of these components.",
+                "start_time_seconds": 16.2,
+                "end_time_seconds": 21.7,
+                "speaker_id": "SPEAKER_01"
+            },
+            {
+                "transcript": "That makes sense. Let's move forward with this approach.",
+                "start_time_seconds": 22.3,
+                "end_time_seconds": 25.9,
+                "speaker_id": "SPEAKER_00"
+            }
+        ]
+    }
+} 

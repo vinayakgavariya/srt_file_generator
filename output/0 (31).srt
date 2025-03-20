@@ -1,0 +1,56 @@
+1
+00:00:00,200 --> 00:00:02,290
+[SPEAKER_00]: Hello, welcome, welcome to PC.
+
+2
+00:00:03,370 --> 00:00:05,370
+[SPEAKER_03]: Can you tell me about your main problem?
+
+3
+00:00:05,870 --> 00:00:10,640
+[SPEAKER_00]: I have a constant headache, feel nauseous and very tired.
+
+4
+00:00:10,980 --> 00:00:12,609
+[SPEAKER_03]: How long has been going on?
+
+5
+00:00:12,789 --> 00:00:15,060
+[SPEAKER_00]: about six days and it's getting worse
+
+6
+00:00:15,480 --> 00:00:24,890
+[SPEAKER_03]: The patient's symptoms started about a week ago and getting stronger. The patient tried over the count pain medicines and but it didn't help much.
+
+7
+00:00:25,120 --> 00:00:25,699
+[SPEAKER_00]: Definitely.
+
+8
+00:00:25,699 --> 00:00:44,740
+[SPEAKER_03]: I recommended resting, resting, drinking plenty of water and staying off screen as much as you can. I will also give some medicines for the itch and discomfort. I would like to get a blood test to check any infections or vitamin issues that has been causing these symptoms.
+
+9
+00:00:46,560 --> 00:00:48,700
+[SPEAKER_02]: Okay, where should I go for the test?
+
+10
+00:00:48,979 --> 00:01:01,520
+[SPEAKER_03]: You can go to the local lab and get the complete blood count test. Try to eat a balanced diet with plenty of water, include more greens, vegetables, um, fruits and lean proteins.
+
+11
+00:01:03,880 --> 00:01:05,280
+[SPEAKER_01]: Got it. I'll do that.
+
+12
+00:01:06,329 --> 00:01:25,120
+[SPEAKER_03]: I am prescribing you paracetamol for diabetes, paracetamol 500 mg twice a day after a meal, three days, six tablets, total six tablets. And Dolo for the fever, Dolo 500 mg twice a day after a meal, three days, total six tablets.
+
+13
+00:01:25,560 --> 00:01:37,250
+[SPEAKER_03]: This should help him with the itch and reduce the discomfort and fever. Let's check back in the three days. If your symptoms get worse or don't improve, please come back sooner.
+
+14
+00:01:38,280 --> 00:01:39,480
+[SPEAKER_02]: Okay, thank you, doctor.
+

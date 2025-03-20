@@ -1,0 +1,8 @@
+1
+00:00:13,960 --> 00:00:29,980
+[SPEAKER_00]: transcript_here
+
+2
+00:00:30,250 --> 00:00:44,409
+[SPEAKER_00]: transcript_here
+
