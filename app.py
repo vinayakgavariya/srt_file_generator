@@ -24,6 +24,44 @@ def format_timestamp(seconds):
     seconds_int = int(seconds_remainder)
     return f"{hours:02d}:{minutes:02d}:{seconds_int:02d},{milliseconds:03d}"
 
+def split_long_chunk(entry, max_duration=7.0):
+    """
+    Split a long transcript chunk into smaller chunks of maximum duration.
+    
+    Args:
+        entry (dict): The transcript entry with start_time, end_time, and transcript
+        max_duration (float): Maximum duration for each chunk in seconds
+        
+    Returns:
+        list: List of split entries
+    """
+    duration = entry['end_time_seconds'] - entry['start_time_seconds']
+    if duration <= max_duration:
+        return [entry]
+    
+    # Calculate number of splits needed
+    num_splits = int(duration / max_duration) + 1
+    split_duration = duration / num_splits
+    
+    # Split the text into roughly equal parts
+    words = entry['transcript'].split()
+    words_per_split = len(words) // num_splits
+    
+    split_entries = []
+    for i in range(num_splits):
+        start_idx = i * words_per_split
+        end_idx = start_idx + words_per_split if i < num_splits - 1 else len(words)
+        
+        split_entry = {
+            'start_time_seconds': entry['start_time_seconds'] + (i * split_duration),
+            'end_time_seconds': entry['start_time_seconds'] + ((i + 1) * split_duration),
+            'transcript': ' '.join(words[start_idx:end_idx]),
+            'speaker_id': entry.get('speaker_id', '')
+        }
+        split_entries.append(split_entry)
+    
+    return split_entries
+
 def create_srt_from_stt_json(json_data, output_path=None):
     """
     Create an SRT subtitle file from the diarized transcript in STT JSON output.
@@ -66,23 +104,29 @@ def create_srt_from_stt_json(json_data, output_path=None):
     
     # Write SRT file
     with open(output_path, 'w', encoding='utf-8') as f:
-        for i, entry in enumerate(entries, 1):
-            start_time = format_timestamp(entry['start_time_seconds'])
-            end_time = format_timestamp(entry['end_time_seconds'])
+        subtitle_index = 1
+        for entry in entries:
+            # Split long chunks into smaller ones
+            split_entries = split_long_chunk(entry)
             
-            # Format text with speaker label if available
-            speaker_id = entry.get('speaker_id', '')
-            text = entry.get('transcript', '')
-            
-            if speaker_id:
-                formatted_text = f"[{speaker_id}]: {text}"
-            else:
-                formatted_text = text
-            
-            # Write SRT format
-            f.write(f"{i}\n")
-            f.write(f"{start_time} --> {end_time}\n")
-            f.write(f"{formatted_text}\n\n")
+            for split_entry in split_entries:
+                start_time = format_timestamp(split_entry['start_time_seconds'])
+                end_time = format_timestamp(split_entry['end_time_seconds'])
+                
+                # Format text with speaker label if available
+                speaker_id = split_entry.get('speaker_id', '')
+                text = split_entry.get('transcript', '')
+                
+                if speaker_id:
+                    formatted_text = f"[{speaker_id}]: {text}"
+                else:
+                    formatted_text = text
+                
+                # Write SRT format
+                f.write(f"{subtitle_index}\n")
+                f.write(f"{start_time} --> {end_time}\n")
+                f.write(f"{formatted_text}\n\n")
+                subtitle_index += 1
     
     logger.info(f"✅ SRT file created at {output_path}")
     print(f"✅ SRT file created at {output_path}")
